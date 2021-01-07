@@ -8,19 +8,18 @@ public class Application {
 	public static void main(String[] args) {
 		
 		ApplicationContext appContext=new AnnotationConfigApplicationContext(AppConfig.class);
-		//ApplicationContext appContext1=new AnnotationConfigApplicationContext(AppConfig.class);
+		
 		
 		//SpeakerService service=new SpeakerServiceImpl();
 		
-		SpeakerService service=appContext.getBean("speakerService",SpeakerService.class);
+		SpeakerService service1=appContext.getBean("speakerService",SpeakerService.class);
+		System.out.println(service1.findAll().get(0).getFirstName());
 		
-		//SpeakerService service1=appContext.getBean("speakerService",SpeakerService.class);
+		SpeakerService service2=appContext.getBean("speakerServiceArg",SpeakerService.class);
+	//	System.out.println(service);
 		
-		//SpeakerService service2=appContext1.getBean("speakerService",SpeakerService.class);
+		System.out.println(service2.findAll().get(0).getFirstName());
 		
-		System.out.println(service.findAll().get(0).getFirstName());
-	//	System.out.println(service1);
-	//	System.out.println(service2);
 		
 
 	}
