@@ -1,4 +1,4 @@
-package com.learn;
+package com.learn.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -6,8 +6,10 @@ public class MyWebInitializer extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Class[] {
+	            AppContext.class
+	        };
 	}
 
 	@Override
